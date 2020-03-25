@@ -18,24 +18,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 28/255, green: 39/255, blue: 101/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 28/255, green: 39/255, blue: 101/255, alpha: 0.0)
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         setUpDummyUI()
+        
+        let ben = SponsorModel(name: "Ben Bushong", image: UIImage(named: "ben"))
         
         // 1. create a deck of cards
         // 20 cards for demonstrational purposes - once the cards run out, just re-run the project to start over
         // of course, you could always add new cards to self.cards and call layoutCards() again
         for _ in 1...20 {
-            let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6))
+            let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), model: ben)
             cards.append(card)
         }
-        
+        //let benCard = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), image: UIImage(named: "ben"))
+        //cards.insert(benCard, at: 0)
         // 2. layout the first 4 cards for the user
         layoutCards()
         
         // 3. set up the (non-interactive) emoji options overlay
         emojiOptionsOverlay = EmojiOptionsOverlay(frame: self.view.frame)
-        self.view.addSubview(emojiOptionsOverlay)
+        //self.view.addSubview(emojiOptionsOverlay)
     }
     
     /// Scale and alpha of successive cards visible to the user

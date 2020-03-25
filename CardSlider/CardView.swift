@@ -19,7 +19,7 @@ public enum CardOption: String {
 }
 
 class CardView: UIView {
-    
+     
     var greenLabel: CardViewLabel!
     var redLabel: CardViewLabel!
     

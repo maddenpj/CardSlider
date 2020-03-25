@@ -10,12 +10,12 @@ import UIKit
 
 class ImageCard: CardView {
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, model: SponsorModel) {
         super.init(frame: frame)
         
         // image
         
-        let imageView = UIImageView(image: UIImage(named: "dummy_image"))
+        let imageView = UIImageView(image: model.image)
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = UIColor(red: 67/255, green: 79/255, blue: 182/255, alpha: 1.0)
         imageView.layer.cornerRadius = 5
@@ -32,7 +32,16 @@ class ImageCard: CardView {
         textBox1.layer.masksToBounds = true
         
         textBox1.frame = CGRect(x: 12, y: imageView.frame.maxY + 15, width: 200, height: 24)
+        let text1 = UILabel(frame: textBox1.frame)
+        text1.frame = text1.frame.offsetBy(dx: 10, dy: 0)
+        text1.text = model.name
+        text1.textColor = UIColor.white
+        text1.font = UIFont.boldSystemFont(ofSize: 18)
+        text1.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+        
         self.addSubview(textBox1)
+        self.addSubview(text1)
+
         
         let textBox2 = UIView()
         textBox2.backgroundColor = UIColor(red: 67/255, green: 79/255, blue: 182/255, alpha: 1.0)

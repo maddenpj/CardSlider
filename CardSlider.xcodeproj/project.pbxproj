@@ -14,6 +14,7 @@
 		100D4DB61E64CA2800486D7C /* EmojiOptionsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB11E64CA2800486D7C /* EmojiOptionsOverlay.swift */; };
 		100D4DB71E64CA2800486D7C /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB21E64CA2800486D7C /* ImageCard.swift */; };
 		100D4DB81E64CA2800486D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB31E64CA2800486D7C /* ViewController.swift */; };
+		CDA166EB242AAEBB008E2976 /* SponsorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA166EA242AAEBB008E2976 /* SponsorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		100D4DB11E64CA2800486D7C /* EmojiOptionsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiOptionsOverlay.swift; sourceTree = "<group>"; };
 		100D4DB21E64CA2800486D7C /* ImageCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
 		100D4DB31E64CA2800486D7C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDA166EA242AAEBB008E2976 /* SponsorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				100D4DAD1E64CA0900486D7C /* Assets.xcassets */,
 				100D4DA41E64C99D00486D7C /* LaunchScreen.storyboard */,
 				100D4DA71E64C99D00486D7C /* Info.plist */,
+				CDA166EA242AAEBB008E2976 /* SponsorModel.swift */,
 			);
 			path = CardSlider;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA166EB242AAEBB008E2976 /* SponsorModel.swift in Sources */,
 				100D4DB81E64CA2800486D7C /* ViewController.swift in Sources */,
 				100D4DB51E64CA2800486D7C /* CardView.swift in Sources */,
 				100D4DB41E64CA2800486D7C /* AppDelegate.swift in Sources */,
