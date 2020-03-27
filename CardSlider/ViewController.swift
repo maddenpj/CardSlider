@@ -155,7 +155,7 @@ class ViewController: UIViewController {
     var cardAttachmentBehavior: UIAttachmentBehavior!
     
     /// This method handles the swiping gesture on each card and shows the appropriate emoji based on the card's center.
-    func handleCardPan(sender: UIPanGestureRecognizer) {
+    @objc func handleCardPan(sender: UIPanGestureRecognizer) {
         // if we're in the process of hiding a card, don't let the user interace with the cards yet
         if cardIsHiding { return }
         // change this to your discretion - it represents how far the user must pan up or down to change the option

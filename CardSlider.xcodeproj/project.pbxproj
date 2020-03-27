@@ -14,6 +14,8 @@
 		100D4DB61E64CA2800486D7C /* EmojiOptionsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB11E64CA2800486D7C /* EmojiOptionsOverlay.swift */; };
 		100D4DB71E64CA2800486D7C /* ImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB21E64CA2800486D7C /* ImageCard.swift */; };
 		100D4DB81E64CA2800486D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100D4DB31E64CA2800486D7C /* ViewController.swift */; };
+		A3C4311E292CE5405DAFA9A9 /* Pods_CardSlider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A4AEEE8FE4EA27F228A480 /* Pods_CardSlider.framework */; };
+		CD05B219242E7FC500DF7934 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CD05B218242E7FC500DF7934 /* Podfile */; };
 		CDA166EB242AAEBB008E2976 /* SponsorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA166EA242AAEBB008E2976 /* SponsorModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,10 @@
 		100D4DB11E64CA2800486D7C /* EmojiOptionsOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiOptionsOverlay.swift; sourceTree = "<group>"; };
 		100D4DB21E64CA2800486D7C /* ImageCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCard.swift; sourceTree = "<group>"; };
 		100D4DB31E64CA2800486D7C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1103B04E7B0C85B510BE5363 /* Pods-CardSlider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlider.release.xcconfig"; path = "Target Support Files/Pods-CardSlider/Pods-CardSlider.release.xcconfig"; sourceTree = "<group>"; };
+		6241A51B537E1AA35DEACC19 /* Pods-CardSlider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlider.debug.xcconfig"; path = "Target Support Files/Pods-CardSlider/Pods-CardSlider.debug.xcconfig"; sourceTree = "<group>"; };
+		69A4AEEE8FE4EA27F228A480 /* Pods_CardSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD05B218242E7FC500DF7934 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDA166EA242AAEBB008E2976 /* SponsorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C4311E292CE5405DAFA9A9 /* Pods_CardSlider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +51,11 @@
 		100D4D8F1E64C99D00486D7C = {
 			isa = PBXGroup;
 			children = (
+				CD05B218242E7FC500DF7934 /* Podfile */,
 				100D4D9A1E64C99D00486D7C /* CardSlider */,
 				100D4D991E64C99D00486D7C /* Products */,
+				18CE657A09A7AC09723C7CF7 /* Pods */,
+				FB8FB2B8EAAB54637A4203A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +83,23 @@
 			path = CardSlider;
 			sourceTree = "<group>";
 		};
+		18CE657A09A7AC09723C7CF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6241A51B537E1AA35DEACC19 /* Pods-CardSlider.debug.xcconfig */,
+				1103B04E7B0C85B510BE5363 /* Pods-CardSlider.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB8FB2B8EAAB54637A4203A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69A4AEEE8FE4EA27F228A480 /* Pods_CardSlider.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 100D4DAA1E64C99D00486D7C /* Build configuration list for PBXNativeTarget "CardSlider" */;
 			buildPhases = (
+				730A44F245F4361843DE9FF6 /* [CP] Check Pods Manifest.lock */,
 				100D4D941E64C99D00486D7C /* Sources */,
 				100D4D951E64C99D00486D7C /* Frameworks */,
 				100D4D961E64C99D00486D7C /* Resources */,
+				EEC6D5BE3B94CB8B953A1F99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +162,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD05B219242E7FC500DF7934 /* Podfile in Resources */,
 				100D4DAE1E64CA0900486D7C /* Assets.xcassets in Resources */,
 				100D4DA61E64C99D00486D7C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		730A44F245F4361843DE9FF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardSlider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEC6D5BE3B94CB8B953A1F99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CardSlider/Pods-CardSlider-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CardSlider/Pods-CardSlider-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		100D4D941E64C99D00486D7C /* Sources */ = {
@@ -263,6 +332,7 @@
 		};
 		100D4DAB1E64C99D00486D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6241A51B537E1AA35DEACC19 /* Pods-CardSlider.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -273,12 +343,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = saoudrizwan.CardSlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		100D4DAC1E64C99D00486D7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1103B04E7B0C85B510BE5363 /* Pods-CardSlider.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -288,7 +359,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = saoudrizwan.CardSlider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
