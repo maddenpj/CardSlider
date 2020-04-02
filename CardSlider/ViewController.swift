@@ -23,25 +23,42 @@ class ViewController: UIViewController {
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         setUpDummyUI()
         
-        let jsonStr = """
+        let t = URLSession.shared.dataTask(with: URL(string: "http://localhost:8000")!) { data, res, err in
+            if let data = data {
+                let json = try! JSON(data: data)
+                for x in json.arrayValue {
+                    let model = SponsorModel(fromJson: x)
+                    let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), model: model)
+                    self.cards.append(card)
+                }
+                self.layoutCards()
+            }
+        }
+        t.resume()
+
+        
+        /* let jsonStr = """
 {"id":4,"name":"Ben","soberDate":"2019-07-14","soberTime":"263","sponseeCount":0,"rideShare":false,"phoneTime":1,"geo":{"latitude":33.656,"longitude":-117.8993},"images":["http://localhost:8000/static/ben.jpg"]}
 """
+ */
+        let jsonStr = """
+{"id":2,"name":"Micheal Scott","soberDate":"2007-06-23","soberTime":"4667","sponseeCount":9,"rideShare":true,"phoneTime":30,"geo":{"latitude":41.8853881,"longitude":-87.6473133},"images":["http://localhost:8000/static/mscott.png"]}
+"""
         let jsonData = jsonStr.data(using: .utf8)!
-        let json = try! JSON(data: jsonData)
+        //let json = try! JSON(data: jsonData)
         //let ben = SponsorModel(name: "Ben Bushong", image: UIImage(named: "ben"))
-        let ben = SponsorModel(fromJson: json)
+        //let ben = SponsorModel(fromJson: json)
         
         // 1. create a deck of cards
         // 20 cards for demonstrational purposes - once the cards run out, just re-run the project to start over
         // of course, you could always add new cards to self.cards and call layoutCards() again
         for _ in 1...20 {
-            let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), model: ben)
-            cards.append(card)
+            //let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), model: ben)
+            //cards.append(card)
         }
-        //let benCard = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), image: UIImage(named: "ben"))
-        //cards.insert(benCard, at: 0)
+
         // 2. layout the first 4 cards for the user
-        layoutCards()
+        //layoutCards()
         
         // 3. set up the (non-interactive) emoji options overlay
         emojiOptionsOverlay = EmojiOptionsOverlay(frame: self.view.frame)
