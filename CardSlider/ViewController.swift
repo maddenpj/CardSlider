@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
@@ -22,7 +23,13 @@ class ViewController: UIViewController {
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         setUpDummyUI()
         
-        let ben = SponsorModel(name: "Ben Bushong", image: UIImage(named: "ben"))
+        let jsonStr = """
+{"id":4,"name":"Ben","soberDate":"2019-07-14","soberTime":"263","sponseeCount":0,"rideShare":false,"phoneTime":1,"geo":{"latitude":33.656,"longitude":-117.8993},"images":["http://localhost:8000/static/ben.jpg"]}
+"""
+        let jsonData = jsonStr.data(using: .utf8)!
+        let json = try! JSON(data: jsonData)
+        //let ben = SponsorModel(name: "Ben Bushong", image: UIImage(named: "ben"))
+        let ben = SponsorModel(fromJson: json)
         
         // 1. create a deck of cards
         // 20 cards for demonstrational purposes - once the cards run out, just re-run the project to start over

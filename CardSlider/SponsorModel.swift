@@ -23,6 +23,10 @@ class SponsorModel {
     init(fromJson json: JSON) {
         self.name = json["name"].stringValue
         //self.age = json["age"].int
-        self.image = nil
+        // watch me do this horrible thing and dl image syncronously
+        let url = URL(string: json["images"].arrayValue[0].stringValue)
+        debugPrint(url)
+        let data = try? Data(contentsOf: url!)
+        self.image = UIImage(data: data!)
     }
 }
