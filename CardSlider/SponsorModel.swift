@@ -7,11 +7,22 @@
 //
 
 import UIKit
-//import SwiftyJSON
+import SwiftyJSON
 
-struct SponsorModel {
+class SponsorModel {
     let name: String
     let age: Int? = nil
-    // age, sober date
+    // only single image currently :/
     let image: UIImage?
+    
+    init(name: String, image: UIImage?) {
+        self.name = name
+        self.image = image
+    }
+    
+    init(fromJson json: JSON) {
+        self.name = json["name"].stringValue
+        //self.age = json["age"].int
+        self.image = nil
+    }
 }
