@@ -22,13 +22,15 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 28/255, green: 39/255, blue: 101/255, alpha: 0.0)
         dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
         setUpDummyUI()
+        emojiOptionsOverlay = EmojiOptionsOverlay(frame: self.view.frame)
         
+        let cardFrame = CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6)
         let t = URLSession.shared.dataTask(with: URL(string: "http://localhost:8000")!) { data, res, err in
             if let data = data {
                 let json = try! JSON(data: data)
                 for x in json.arrayValue {
                     let model = SponsorModel(fromJson: x)
-                    let card = ImageCard(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 60, height: self.view.frame.height * 0.6), model: model)
+                    let card = ImageCard(frame: cardFrame, model: model)
                     self.cards.append(card)
                 }
                 self.layoutCards()
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
         /* let jsonStr = """
 {"id":4,"name":"Ben","soberDate":"2019-07-14","soberTime":"263","sponseeCount":0,"rideShare":false,"phoneTime":1,"geo":{"latitude":33.656,"longitude":-117.8993},"images":["http://localhost:8000/static/ben.jpg"]}
 """
- */
+ 
         let jsonStr = """
 {"id":2,"name":"Micheal Scott","soberDate":"2007-06-23","soberTime":"4667","sponseeCount":9,"rideShare":true,"phoneTime":30,"geo":{"latitude":41.8853881,"longitude":-87.6473133},"images":["http://localhost:8000/static/mscott.png"]}
 """
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
         // 3. set up the (non-interactive) emoji options overlay
         emojiOptionsOverlay = EmojiOptionsOverlay(frame: self.view.frame)
         //self.view.addSubview(emojiOptionsOverlay)
+ */
     }
     
     /// Scale and alpha of successive cards visible to the user
