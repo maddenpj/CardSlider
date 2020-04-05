@@ -49,7 +49,14 @@ class ImageCard: CardView {
         textBox2.layer.masksToBounds = true
         
         textBox2.frame = CGRect(x: 12, y: textBox1.frame.maxY + 10, width: 120, height: 24)
+        let text2 = UILabel(frame: textBox2.frame)
+        text2.frame = text2.frame.offsetBy(dx: 10, dy: 0)
+        text2.text = "\(model.soberDays ?? 0)"
+        text2.textColor = UIColor.white
+        text2.font = UIFont.boldSystemFont(ofSize: 18)
+        
         self.addSubview(textBox2)
+        self.addSubview(text2)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -14,18 +14,20 @@ class SponsorModel {
     let age: Int? = nil
     // only single image currently :/
     let image: UIImage?
+    let soberDays: Int?
     
-    init(name: String, image: UIImage?) {
+    init(name: String, image: UIImage?, soberDays: Int?) {
         self.name = name
         self.image = image
+        self.soberDays = soberDays
     }
     
     init(fromJson json: JSON) {
         self.name = json["name"].stringValue
-        //self.age = json["age"].int
+        self.soberDays = json["soberTime"].int
         // watch me do this horrible thing and dl image syncronously
         let url = URL(string: json["images"].arrayValue[0].stringValue)
-        debugPrint(url)
+        //debugPrint(url)
         let data = try? Data(contentsOf: url!)
         self.image = UIImage(data: data!)
     }
